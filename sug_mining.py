@@ -25,7 +25,7 @@ def get_suggestions(prefix):
 	return suggestions
 
 def search_prefixes(): # temporary
-	return ['get', 'how to', 'how can i', 'why']
+	return ['get', 'how to', 'how can i', 'why is', 'why am i', 'how can i get', 'what should i']
 
 QUERY_BASE = 'http://www.google.com/search'
 USER_AGENT = 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.97 Safari/537.22'
@@ -52,7 +52,6 @@ def main():
 		for query_str in get_suggestions(prefix):
 			search_pages[query_str], _ = run_query(query_str)
 			print '%s : %d results' % (query_str, search_pages[query_str])
-	print search_pages
 
 
 if __name__ == '__main__':
